@@ -2,6 +2,12 @@
 
 Static multi-page website (HTML, CSS, JavaScript only). No build step, database, or backend.
 
+## Live site
+
+**https://amanurrahman101.github.io/RedsBD-Website/**
+
+Repository: https://github.com/AmanurRahman101/RedsBD-Website
+
 ## Pages
 
 | Page | File |
@@ -12,7 +18,15 @@ Static multi-page website (HTML, CSS, JavaScript only). No build step, database,
 | Expertise | `expertise.html` |
 | Contact | `contact.html` |
 
-## How to view
+## Contact
+
+- **Director:** M. Tanvir Alam  
+- **Address:** House-476 (3rd Floor), Road-32, Mohakhali DOHS, Dhaka  
+- **Phone:** +88-01921062880  
+- **Email:** director@redsbd.com  
+- **Web:** www.redsbd.com  
+
+## How to view locally
 
 Open `index.html` in a browser, or serve the folder with any static server:
 
@@ -20,12 +34,9 @@ Open `index.html` in a browser, or serve the folder with any static server:
 npx --yes serve .
 ```
 
-Then visit the URL shown in the terminal (typically `http://localhost:3000`).
-
 ## Notes
 
 - Logo: `assets/logo/reds-logo.png`
 - Animations: GSAP + ScrollTrigger (CDN)
 - Contact form opens the user’s email client via `mailto:` (no server)
-- Address, phone, and client names are placeholders until real details are provided
 - Service images use Unsplash placeholders; replace with project photography when available
