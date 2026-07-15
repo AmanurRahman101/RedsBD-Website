@@ -120,8 +120,8 @@ textarea {
 }
 
 .logo img {
-  width: 56px;
-  height: 56px;
+  width: 44px;
+  height: 44px;
   object-fit: contain;
 }
 
@@ -539,30 +539,24 @@ textarea {
 
 .contact-layout {
   display: grid;
-  grid-template-columns: 1fr 1.15fr;
-  gap: 2.5rem;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 3rem;
   padding-block: 2.5rem 3.5rem;
+  align-items: start;
 }
 
-.contact-photo {
-  overflow: hidden;
-  background: var(--grey-bar);
-  margin-bottom: 1.5rem;
-}
-
-.contact-photo img {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 3 / 4;
-  object-fit: cover;
-  max-height: 420px;
+.contact-details {
+  background: #f9fafb;
+  border: 1px solid var(--border);
+  padding: 2rem;
+  border-radius: 4px;
 }
 
 .contact-details dt {
   font-family: var(--font-display);
   font-weight: 700;
   color: var(--blue);
-  margin-top: 0.85rem;
+  margin-top: 1rem;
 }
 
 .contact-details dt:first-child {
@@ -571,7 +565,7 @@ textarea {
 
 .contact-details dd {
   color: #222;
-  margin-top: 0.2rem;
+  margin-top: 0.25rem;
 }
 
 .contact-details a {
@@ -700,8 +694,8 @@ textarea {
 }
 
 .footer-logo-box {
-  background: var(--white);
-  padding: 1rem 1.15rem;
+  background: transparent;
+  padding: 0;
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
@@ -709,53 +703,25 @@ textarea {
 }
 
 .footer-logo-box img {
-  width: 48px;
-  height: 48px;
+  width: 44px;
+  height: 44px;
   object-fit: contain;
 }
 
 .footer-logo-box div {
   font-family: var(--font-display);
-  color: var(--navy);
+  color: var(--white);
   line-height: 1.2;
 }
 
 .footer-logo-box strong {
   display: block;
-  font-size: 1rem;
+  font-size: 1.15rem;
 }
 
 .footer-logo-box span {
   font-size: 0.72rem;
-  color: var(--grey-muted);
-}
-
-.footer-badge {
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
-  background: var(--white);
-  color: var(--navy);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 1rem;
-  font-family: var(--font-display);
-  box-shadow: inset 0 0 0 6px var(--navy), inset 0 0 0 8px #c5a35a;
-}
-
-.footer-badge strong {
-  font-size: 0.85rem;
-  letter-spacing: 0.04em;
-}
-
-.footer-badge span {
-  font-size: 0.65rem;
-  line-height: 1.3;
-  margin-top: 0.35rem;
-  color: var(--grey-muted);
+  color: #c5d0dc;
 }
 
 .footer-col h4 {
