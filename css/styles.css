@@ -20,7 +20,7 @@
   --shadow-soft: 0 10px 40px -10px rgba(11, 17, 32, 0.08);
   --shadow-hover: 0 20px 40px -10px rgba(37, 99, 235, 0.15), 0 10px 20px -5px rgba(11, 17, 32, 0.1);
   --shadow-header: 0 4px 30px rgba(11, 17, 32, 0.05);
-  --container: 1200px;
+  --container: 1280px;
   --header-h: 80px;
   --font-display: "Outfit", system-ui, sans-serif;
   --font-body: "Inter", system-ui, sans-serif;
@@ -390,7 +390,7 @@ textarea {
   font-size: 1.45rem;
   font-weight: 700;
   color: var(--blue);
-  margin: 2.5rem 0 1rem;
+  margin: 2.75rem 0 1rem;
   letter-spacing: -0.01em;
 }
 
@@ -417,8 +417,9 @@ textarea {
 }
 
 .prose--home {
-  max-width: 920px;
+  max-width: none;
   margin-inline: 0;
+  width: 100%;
 }
 
 .prose p {
@@ -467,21 +468,22 @@ textarea {
 
 .service-card {
   text-align: left;
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.6);
-  border-radius: 20px;
-  padding: 1.5rem;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 0;
+  overflow: hidden;
   box-shadow: var(--shadow-soft);
-  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition), background var(--transition);
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .service-card:hover {
-  transform: translateY(-8px) scale(1.02);
-  background: rgba(255, 255, 255, 1);
+  transform: translateY(-6px);
   box-shadow: var(--shadow-hover);
-  border-color: rgba(37, 99, 235, 0.3);
+  border-color: rgba(37, 99, 235, 0.28);
 }
 
 .service-card__media {
@@ -489,8 +491,8 @@ textarea {
   overflow: hidden;
   aspect-ratio: 16 / 10;
   background: var(--grey-bar);
-  margin-bottom: 1.25rem;
-  border-radius: 8px;
+  margin-bottom: 0;
+  border-radius: 0;
 }
 
 .service-card__media img {
@@ -511,19 +513,19 @@ textarea {
 }
 
 .service-card:hover .service-card__media img {
-  transform: scale(1.08);
+  transform: scale(1.06);
 }
 
 .service-card:hover .service-card__media::after {
-  background: rgba(15, 98, 254, 0.1);
+  background: rgba(15, 98, 254, 0.08);
 }
 
 .service-card h3 {
   font-family: var(--font-display);
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   font-weight: 700;
   color: var(--navy);
-  margin-bottom: 0.5rem;
+  margin: 1.15rem 1.35rem 0.55rem;
   transition: color var(--transition);
 }
 
@@ -532,10 +534,12 @@ textarea {
 }
 
 .service-card p {
-  font-size: 0.92rem;
+  font-size: 0.95rem;
   line-height: 1.65;
   color: var(--grey-text);
-  text-align: justify;
+  text-align: left;
+  margin: 0 1.35rem 1.4rem;
+  flex: 1;
 }
 
 .service-card--center {
@@ -547,7 +551,7 @@ textarea {
 }
 
 .service-card--center p {
-  text-align: justify;
+  text-align: left;
 }
 
 /* ---------- Capabilities grid (Services) ---------- */
@@ -609,21 +613,33 @@ textarea {
   }
 }
 
-/* ---------- BCL Services grid (left-aligned, no centering) ---------- */
+/* ---------- BCL Services grid — larger photocards (3-up) ---------- */
+
+.bcl-services-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2.5rem 2rem;
+}
 
 .bcl-services-grid .service-card {
   text-align: left;
 }
 
+.bcl-services-grid .service-card__media {
+  aspect-ratio: 16 / 11;
+}
+
 .bcl-services-grid .service-card h3 {
   text-align: left;
+  font-size: 1.28rem;
+  margin: 1.35rem 1.5rem 0.65rem;
 }
 
 .bcl-services-grid .service-card p {
-  text-align: justify;
-  font-size: 0.9rem;
+  text-align: left;
+  font-size: 0.98rem;
   color: var(--grey-text);
-  line-height: 1.6;
+  line-height: 1.7;
+  margin: 0 1.5rem 1.55rem;
 }
 
 /* ---------- People Cards ---------- */
@@ -1188,6 +1204,10 @@ textarea {
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
   }
+  .bcl-services-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem 1.5rem;
+  }
   .highlights-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -1248,7 +1268,8 @@ textarea {
 }
 
 @media (max-width: 480px) {
-  .grid-4 {
+  .grid-4,
+  .bcl-services-grid {
     grid-template-columns: 1fr;
   }
   .highlights-grid {
