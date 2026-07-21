@@ -16,6 +16,7 @@ Repository: https://github.com/AmanurRahman101/RedsBD-Website
 | About Us | `about.html` |
 | Services | `services.html` |
 | Expertise | `expertise.html` |
+| People | `people.html` |
 | Contact | `contact.html` |
 
 ## Contact
