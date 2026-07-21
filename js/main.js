@@ -94,7 +94,7 @@
     const submitBtn = form.querySelector('[type="submit"]');
     const endpoint =
       form.getAttribute("action") ||
-      "https://formsubmit.co/ajax/rahmanamanur51@gmail.com";
+      "https://formsubmit.co/ajax/mailus@redsbd.com";
 
     form.addEventListener("submit", async (e) => {
       e.preventDefault();

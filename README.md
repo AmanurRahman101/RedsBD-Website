@@ -39,5 +39,5 @@ npx --yes serve .
 
 - Logo: `assets/logo/reds-logo.png`
 - Animations: GSAP + ScrollTrigger (CDN)
-- Contact form sends email via FormSubmit (free, no backend) to `rahmanamanur51@gmail.com`
+- Contact form sends email via FormSubmit (free, no backend) to `mailus@redsbd.com`
 - Service images use Unsplash placeholders; replace with project photography when available
