@@ -1088,12 +1088,12 @@ textarea {
 }
 
 .contact-details {
-  background: var(--navy);
-  color: var(--white);
-  border: 1px solid rgba(255, 255, 255, 0.03);
-  padding: 3rem 2.5rem;
-  border-radius: 16px;
-  box-shadow: 0 20px 50px rgba(5, 14, 23, 0.15);
+  background: transparent;
+  color: var(--grey-text);
+  border: none;
+  padding: 0.25rem 0;
+  border-radius: 0;
+  box-shadow: none;
 }
 
 .contact-details dt {
@@ -1111,15 +1111,15 @@ textarea {
 }
 
 .contact-details dd {
-  color: #e2e8f0;
+  color: var(--navy);
   margin-top: 0.35rem;
   font-size: 1.05rem;
   line-height: 1.55;
 }
 
 .contact-details a {
-  color: var(--white);
-  border-bottom: 1px dashed rgba(255, 255, 255, 0.3);
+  color: var(--navy);
+  border-bottom: 1px dashed rgba(11, 17, 32, 0.25);
   transition: color var(--transition), border-color var(--transition);
 }
 
