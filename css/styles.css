@@ -48,6 +48,35 @@ body {
   color: var(--grey-text);
   background: var(--white);
   -webkit-font-smoothing: antialiased;
+  animation: page-enter 0.4s var(--ease-out) both;
+}
+
+body.is-leaving {
+  animation: none;
+  opacity: 0;
+  transition: opacity 0.28s var(--ease-out);
+  pointer-events: none;
+}
+
+@keyframes page-enter {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body {
+    animation: none;
+  }
+
+  body.is-leaving {
+    opacity: 1;
+    transition: none;
+    pointer-events: auto;
+  }
 }
 
 img {

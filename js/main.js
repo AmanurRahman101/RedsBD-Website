@@ -1,4 +1,4 @@
-/* REDS site interactions — nav, GSAP reveals, contact form */
+/* REDS site interactions — nav, page transitions, GSAP reveals, contact form */
 
 (function () {
   "use strict";
@@ -7,6 +7,56 @@
   const nav = document.querySelector(".site-nav");
   const toggle = document.querySelector(".nav-toggle");
   const form = document.querySelector("#contact-form");
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* Smooth page leave (same-site links only); enter is CSS */
+  window.addEventListener("pageshow", () => {
+    document.body.classList.remove("is-leaving");
+  });
+
+  if (!reduceMotion) {
+    document.addEventListener("click", (e) => {
+      const link = e.target.closest("a[href]");
+      if (!link) return;
+      if (e.defaultPrevented || e.button !== 0) return;
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+      if (link.target && link.target !== "_self") return;
+      if (link.hasAttribute("download")) return;
+
+      const href = link.getAttribute("href");
+      if (!href || href.startsWith("#") || href.startsWith("mailto:") || href.startsWith("tel:")) return;
+      if (/^https?:\/\//i.test(href)) return;
+
+      const url = new URL(href, window.location.href);
+      if (url.origin !== window.location.origin) return;
+      if (
+        url.pathname === window.location.pathname &&
+        url.search === window.location.search &&
+        url.hash
+      ) {
+        return;
+      }
+
+      e.preventDefault();
+      document.body.classList.add("is-leaving");
+
+      const go = () => {
+        window.location.href = url.href;
+      };
+
+      let done = false;
+      const finish = () => {
+        if (done) return;
+        done = true;
+        go();
+      };
+
+      window.setTimeout(finish, 320);
+      document.body.addEventListener("transitionend", (ev) => {
+        if (ev.target === document.body && ev.propertyName === "opacity") finish();
+      });
+    });
+  }
 
   /* Sticky header shadow */
   function onScroll() {
@@ -117,8 +167,6 @@
   }
 
   /* GSAP animations */
-  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
   function showReveals() {
     document.querySelectorAll(".reveal, .reveal-stagger > *").forEach((el) => {
       el.style.opacity = "1";
