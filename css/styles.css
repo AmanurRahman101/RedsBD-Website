@@ -432,6 +432,16 @@ textarea {
   font-weight: 600;
 }
 
+.prose a {
+  color: var(--blue);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.prose a:hover {
+  color: var(--navy);
+}
+
 .mission-list {
   margin: 0.5rem 0 2rem 0;
   display: grid;
