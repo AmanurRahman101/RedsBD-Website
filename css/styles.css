@@ -389,7 +389,7 @@ textarea {
   font-family: var(--font-display);
   font-size: 1.45rem;
   font-weight: 700;
-  color: var(--navy);
+  color: var(--blue);
   margin: 2.5rem 0 1rem;
   letter-spacing: -0.01em;
 }
@@ -398,11 +398,27 @@ textarea {
   margin-top: 0;
 }
 
+.intro-heading {
+  font-family: var(--font-display);
+  font-size: clamp(1.85rem, 3.5vw, 2.5rem);
+  font-weight: 700;
+  color: var(--blue);
+  margin: 0 0 1.5rem;
+  letter-spacing: -0.02em;
+  text-align: left;
+}
+
 .prose {
   max-width: 900px;
   margin-inline: auto;
   font-size: 1.05rem;
   line-height: 1.8;
+  color: var(--grey-text);
+}
+
+.prose--home {
+  max-width: 920px;
+  margin-inline: 0;
 }
 
 .prose p {
@@ -415,24 +431,30 @@ textarea {
 }
 
 .mission-list {
-  margin: 1rem 0 2rem 0;
+  margin: 0.5rem 0 2rem 0;
   display: grid;
   gap: 0.75rem;
+  list-style: none;
+  padding: 0;
 }
 
 .mission-list li {
   position: relative;
-  padding-left: 1.75rem;
+  padding-left: 1.5rem;
   color: var(--grey-text);
   font-size: 1.05rem;
+  line-height: 1.75;
 }
 
 .mission-list li::before {
-  content: "✓";
+  content: "";
   position: absolute;
   left: 0;
-  color: var(--blue);
-  font-weight: 700;
+  top: 0.65em;
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 50%;
+  background: var(--blue);
 }
 
 /* ---------- Grid and Tactile Service Cards ---------- */
