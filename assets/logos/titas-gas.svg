@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320" role="img" aria-label="Titas Gas">
+  <defs>
+    <path id="topArc" d="M 45,160 A 115,115 0 1,1 275,160" fill="none"/>
+  </defs>
+  <circle cx="160" cy="160" r="148" fill="#fff" stroke="#111" stroke-width="4"/>
+  <!-- flame -->
+  <path d="M160 70 C190 110, 210 140, 198 175 C190 198, 172 210, 160 220 C148 210, 130 198, 122 175 C110 140, 130 110, 160 70 Z" fill="#e53935"/>
+  <path d="M160 120 C172 140, 178 155, 172 175 C168 188, 160 198, 160 198 C160 198, 152 188, 148 175 C142 155, 148 140, 160 120 Z" fill="#fdd835"/>
+  <!-- center label -->
+  <rect x="78" y="228" width="164" height="32" rx="3" fill="none" stroke="#111" stroke-width="2.5"/>
+  <text x="160" y="251" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#111">TITAS GAS</text>
+  <text x="160" y="288" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#111">1964</text>
+  <text font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" fill="#111" letter-spacing="1.2">
+    <textPath href="#topArc" startOffset="50%" text-anchor="middle">TRANSMISSION AND DISTRIBUTION CO. LTD.</textPath>
+  </text>
+</svg>

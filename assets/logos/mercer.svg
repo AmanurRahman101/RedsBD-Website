@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 140" role="img" aria-label="Mercer">
+  <g transform="translate(18,28)">
+    <polygon points="24,8 48,22 38,42 10,28" fill="#005a78"/>
+    <polygon points="48,22 78,12 70,40 38,42" fill="#00b0b9"/>
+    <polygon points="18,36 42,48 28,78 2,58" fill="#40c4cd"/>
+    <polygon points="42,48 70,40 86,62 48,80" fill="#00b0b9"/>
+  </g>
+  <text x="120" y="92" fill="#00b0b9" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="56" letter-spacing="1">MERCER</text>
+</svg>
