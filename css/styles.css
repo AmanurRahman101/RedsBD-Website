@@ -409,8 +409,9 @@ textarea {
 }
 
 .prose {
-  max-width: 900px;
-  margin-inline: auto;
+  max-width: none;
+  margin-inline: 0;
+  width: auto;
   font-size: 1.05rem;
   line-height: 1.8;
   color: var(--grey-text);
@@ -421,6 +422,40 @@ textarea {
   margin-inline: 0;
   width: auto;
   padding-inline: 0;
+}
+
+.prose .section-tag {
+  text-align: left;
+}
+
+.values-grid {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.values-card {
+  padding: 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--white);
+}
+
+.values-card strong {
+  color: var(--blue);
+  font-size: 1.1rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.values-card ul {
+  list-style: disc;
+  padding-left: 1.25rem;
+  font-size: 0.95rem;
+}
+
+.values-card li {
+  margin-bottom: 0.35rem;
 }
 
 .prose p {
