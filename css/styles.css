@@ -903,7 +903,99 @@ textarea {
   transform: translateY(0);
 }
 
-/* ---------- Clients logo grid ---------- */
+/* ---------- Partners / clients logo marquee ---------- */
+
+.partners-section {
+  overflow: hidden;
+}
+
+.partners-section .section-heading {
+  margin-bottom: 2.5rem;
+}
+
+.logo-marquee {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+}
+
+.logo-marquee__track {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  width: max-content;
+  animation: logo-marquee-rtl 45s linear infinite;
+}
+
+.logo-marquee:hover .logo-marquee__track {
+  animation-play-state: paused;
+}
+
+.logo-marquee__item {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 150px;
+  height: 88px;
+  padding: 0.85rem 1.35rem;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: var(--shadow-soft);
+}
+
+.logo-marquee__item img {
+  display: block;
+  height: 52px;
+  width: auto;
+  max-width: 180px;
+  object-fit: contain;
+  filter: grayscale(0.15);
+  opacity: 0.92;
+  transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+.logo-marquee__item:hover img {
+  filter: none;
+  opacity: 1;
+}
+
+.logo-marquee__item--text span {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+@keyframes logo-marquee-rtl {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-marquee__track {
+    animation: none;
+    flex-wrap: wrap;
+    width: min(100% - 3rem, var(--container));
+    margin-inline: auto;
+    justify-content: center;
+  }
+
+  .logo-marquee__item[aria-hidden="true"] {
+    display: none;
+  }
+}
+
+/* ---------- Clients logo grid (legacy / other pages) ---------- */
 
 .clients-grid {
   display: grid;
