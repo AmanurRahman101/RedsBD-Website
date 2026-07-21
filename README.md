@@ -24,7 +24,7 @@ Repository: https://github.com/AmanurRahman101/RedsBD-Website
 - **Director:** M. Tanvir Alam  
 - **Address:** House-476 (3rd Floor), Road-32, Mohakhali DOHS, Dhaka  
 - **Phone:** +88-01921062880  
-- **Email:** director@redsbd.com  
+- **Email:** mailus@redsbd.com  
 - **Web:** www.redsbd.com  
 
 ## How to view locally
