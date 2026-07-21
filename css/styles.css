@@ -1216,6 +1216,15 @@ textarea {
   box-shadow: 0 8px 25px rgba(37, 99, 235, 0.6);
 }
 
+.form-honey {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
 .form-status {
   margin-top: 1.25rem;
   font-size: 0.95rem;
@@ -1226,6 +1235,13 @@ textarea {
 
 .form-status.is-error {
   color: var(--maroon);
+}
+
+.contact-form .btn[disabled] {
+  opacity: 0.7;
+  cursor: wait;
+  transform: none;
+  box-shadow: none;
 }
 
 /* ---------- Premium Footer ---------- */

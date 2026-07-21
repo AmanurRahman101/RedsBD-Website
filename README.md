@@ -39,5 +39,5 @@ npx --yes serve .
 
 - Logo: `assets/logo/reds-logo.png`
 - Animations: GSAP + ScrollTrigger (CDN)
-- Contact form opens the user’s email client via `mailto:` (no server)
+- Contact form sends email via FormSubmit (free, no backend) to `rahmanamanur51@gmail.com`
 - Service images use Unsplash placeholders; replace with project photography when available

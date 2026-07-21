@@ -38,15 +38,21 @@
     requestAnimationFrame(() => hero.classList.add("is-ready"));
   }
 
-  /* Contact form — static only */
+  /* Contact form — FormSubmit (no backend) */
   if (form) {
     const status = document.querySelector("#form-status");
-    form.addEventListener("submit", (e) => {
+    const submitBtn = form.querySelector('[type="submit"]');
+    const endpoint =
+      form.getAttribute("action") ||
+      "https://formsubmit.co/ajax/rahmanamanur51@gmail.com";
+
+    form.addEventListener("submit", async (e) => {
       e.preventDefault();
       const name = form.querySelector('[name="name"]');
       const email = form.querySelector('[name="email"]');
       const subject = form.querySelector('[name="subject"]');
       const message = form.querySelector('[name="message"]');
+      const subjectHidden = form.querySelector('[name="_subject"]');
 
       if (!name.value.trim() || !email.value.trim() || !message.value.trim()) {
         if (status) {
@@ -65,25 +71,48 @@
         return;
       }
 
-      if (status) {
-        status.classList.remove("is-error");
-        status.textContent =
-          "Thank you. Your message has been prepared. (Demo form — no server connected.)";
+      if (subjectHidden) {
+        subjectHidden.value = subject.value.trim() || "REDS website enquiry";
       }
 
-      const body = [
-        `Name: ${name.value.trim()}`,
-        `Email: ${email.value.trim()}`,
-        "",
-        message.value.trim(),
-      ].join("\n");
+      if (status) {
+        status.classList.remove("is-error");
+        status.textContent = "Sending…";
+      }
+      if (submitBtn) submitBtn.disabled = true;
 
-      const mailto = `mailto:director@redsbd.com?subject=${encodeURIComponent(
-        subject.value.trim() || "REDS website enquiry"
-      )}&body=${encodeURIComponent(body)}`;
+      try {
+        const res = await fetch(endpoint, {
+          method: "POST",
+          headers: {
+            Accept: "application/json",
+          },
+          body: new FormData(form),
+        });
 
-      window.location.href = mailto;
-      form.reset();
+        const data = await res.json().catch(() => ({}));
+
+        if (!res.ok) {
+          throw new Error(data.message || "Unable to send message.");
+        }
+
+        if (status) {
+          status.classList.remove("is-error");
+          status.textContent = "Thank you. Your message has been sent.";
+        }
+        form.reset();
+        if (subjectHidden) subjectHidden.value = "REDS website enquiry";
+      } catch (err) {
+        if (status) {
+          status.classList.add("is-error");
+          status.textContent =
+            err && err.message
+              ? err.message
+              : "Something went wrong. Please try again or email us directly.";
+        }
+      } finally {
+        if (submitBtn) submitBtn.disabled = false;
+      }
     });
   }
 
