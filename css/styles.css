@@ -978,14 +978,13 @@ textarea {
 
 .logo-marquee__item img {
   display: block;
-  height: 56px;
+  height: 52px;
   width: auto;
-  max-width: 200px;
+  max-width: 180px;
   object-fit: contain;
-  filter: grayscale(0.1);
-  opacity: 0.95;
+  filter: grayscale(0.15);
+  opacity: 0.92;
   transition: filter 0.3s ease, opacity 0.3s ease;
-  image-rendering: auto;
 }
 
 .logo-marquee__item--titas {
