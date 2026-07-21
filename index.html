@@ -43,11 +43,24 @@
     </header>
 
     <main>
-      <section class="hero" aria-label="Featured project">
+      <section class="hero hero--video" aria-label="Featured">
         <div class="hero-media">
+          <video
+            class="hero-video"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="metadata"
+            poster="assets/images/bridges.jpg"
+            aria-hidden="true"
+          >
+            <source src="assets/videos/hero-research.mp4" type="video/mp4" />
+          </video>
           <img
+            class="hero-fallback"
             src="assets/images/bridges.jpg"
-            alt="Infrastructure and development in Bangladesh"
+            alt="Infrastructure and development research"
             width="1920"
             height="800"
           />
@@ -55,7 +68,7 @@
         <div class="hero-overlay" aria-hidden="true"></div>
         <div class="hero-caption">
           <div class="container">
-            <p>Engineering, planning, and development services for sustainable growth in Bangladesh.</p>
+            <p>Research, evaluation, and development for sustainable growth in Bangladesh.</p>
           </div>
         </div>
       </section>

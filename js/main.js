@@ -32,10 +32,36 @@
     });
   }
 
-  /* Hero ready class for gentle zoom settle */
+  /* Hero ready class for gentle zoom settle + video fallback */
   const hero = document.querySelector(".hero");
   if (hero) {
     requestAnimationFrame(() => hero.classList.add("is-ready"));
+
+    const heroVideo = hero.querySelector(".hero-video");
+    const heroFallback = hero.querySelector(".hero-fallback");
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (heroVideo) {
+      if (reduceMotion) {
+        heroVideo.removeAttribute("autoplay");
+        heroVideo.pause();
+        hero.classList.add("hero--static");
+      } else {
+        const play = heroVideo.play();
+        if (play && typeof play.catch === "function") {
+          play.catch(() => {
+            hero.classList.add("hero--static");
+            if (heroFallback) heroFallback.style.display = "block";
+            heroVideo.style.display = "none";
+          });
+        }
+        heroVideo.addEventListener("error", () => {
+          hero.classList.add("hero--static");
+          if (heroFallback) heroFallback.style.display = "block";
+          heroVideo.style.display = "none";
+        });
+      }
+    }
   }
 
   /* Contact form — static only */

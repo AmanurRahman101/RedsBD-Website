@@ -303,7 +303,8 @@ textarea {
   z-index: 1;
 }
 
-.hero-media img {
+.hero-media img,
+.hero-media video {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -311,8 +312,41 @@ textarea {
   transition: transform 10s var(--ease-out);
 }
 
-.hero.is-ready .hero-media img {
+.hero-media video {
+  display: block;
+}
+
+.hero-media .hero-fallback {
+  display: none;
+}
+
+.hero.is-ready .hero-media img,
+.hero.is-ready .hero-media video {
   transform: scale(1);
+}
+
+/* Prefer static image when reduced motion is requested */
+@media (prefers-reduced-motion: reduce) {
+  .hero-media video {
+    display: none;
+  }
+
+  .hero-media .hero-fallback {
+    display: block;
+    transform: none;
+  }
+
+  .hero.is-ready .hero-media img {
+    transform: none;
+  }
+}
+
+.hero.hero--static .hero-media video {
+  display: none;
+}
+
+.hero.hero--static .hero-media .hero-fallback {
+  display: block;
 }
 
 .hero-overlay {
