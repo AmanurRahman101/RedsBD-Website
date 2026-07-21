@@ -417,9 +417,10 @@ textarea {
 }
 
 .prose--home {
-  max-width: none;
+  max-width: 860px;
   margin-inline: 0;
-  width: 100%;
+  width: auto;
+  padding-inline: 0;
 }
 
 .prose p {
