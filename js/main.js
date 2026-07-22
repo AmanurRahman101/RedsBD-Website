@@ -86,6 +86,19 @@
   const hero = document.querySelector(".hero");
   if (hero) {
     requestAnimationFrame(() => hero.classList.add("is-ready"));
+
+    const heroVideo = hero.querySelector(".hero-video");
+    if (heroVideo) {
+      if (reduceMotion) {
+        hero.classList.add("no-hero-video");
+      } else {
+        heroVideo.addEventListener("error", () => hero.classList.add("no-hero-video"));
+        const playPromise = heroVideo.play();
+        if (playPromise && typeof playPromise.catch === "function") {
+          playPromise.catch(() => hero.classList.add("no-hero-video"));
+        }
+      }
+    }
   }
 
   /* Contact form — FormSubmit (no backend) */

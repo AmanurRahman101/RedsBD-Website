@@ -330,8 +330,10 @@ textarea {
   position: absolute;
   inset: 0;
   z-index: 1;
+  background: var(--navy);
 }
 
+.hero-media video,
 .hero-media img {
   width: 100%;
   height: 100%;
@@ -340,8 +342,21 @@ textarea {
   transition: transform 10s var(--ease-out);
 }
 
+.hero.is-ready .hero-media video,
 .hero.is-ready .hero-media img {
   transform: scale(1);
+}
+
+.hero-fallback-img {
+  display: none;
+}
+
+.no-hero-video .hero-video {
+  display: none;
+}
+
+.no-hero-video .hero-fallback-img {
+  display: block;
 }
 
 .hero-overlay {
@@ -1022,6 +1037,14 @@ textarea {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .hero-video {
+    display: none;
+  }
+
+  .hero-fallback-img {
+    display: block;
+  }
+
   .logo-marquee__track {
     animation: none;
     flex-wrap: wrap;

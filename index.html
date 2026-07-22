@@ -14,7 +14,7 @@
       href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/styles.css?v=4" />
+    <link rel="stylesheet" href="css/styles.css?v=5" />
     <link rel="icon" href="favicon.ico" sizes="any" />
     <link rel="icon" href="assets/favicon.png?v=3" type="image/png" sizes="32x32" />
     <link rel="icon" href="assets/favicon-192.png?v=3" type="image/png" sizes="192x192" />
@@ -49,9 +49,22 @@
     <main>
       <section class="hero" aria-label="Featured project">
         <div class="hero-media">
+          <video
+            class="hero-video"
+            poster="assets/video/hero-highway-bridge-poster.jpg"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="metadata"
+            aria-hidden="true"
+          >
+            <source src="assets/video/hero-highway-bridge.mp4" type="video/mp4" />
+          </video>
           <img
-            src="https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=1920&q=80"
-            alt="Global research and development"
+            class="hero-fallback-img"
+            src="assets/video/hero-highway-bridge-poster.jpg"
+            alt="Aerial view of a highway bridge — infrastructure development"
             width="1920"
             height="800"
           />
